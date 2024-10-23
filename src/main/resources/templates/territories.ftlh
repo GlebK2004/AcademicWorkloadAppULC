@@ -9,17 +9,17 @@
         Добавить новый ВУЗ
     </a>
     <div class="collapse mb-3" id="collapseExample1" style="">
-        <form action="/university/create" method="post" enctype="multipart/form-data">
+        <form action="/territory/create" method="post" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="universityName">Название университета</label>
+                <label for="territoryName">Название университета</label>
                 <input type="text" required class="form-control"
-                       id="universityName" name="name">
+                       id="territoryName" name="name">
             </div>
 
             <div class="form-group">
-                <label for="universityCity">Город </label>
+                <label for="territoryCity">Город </label>
                 <input type="text" required class="form-control"
-                       id="universityCity" name="city">
+                       id="territoryCity" name="city">
             </div>
 
             <div class="form-group">
@@ -36,11 +36,11 @@
     </div>
 
     <div class="card-columns">
-        <#list universities as university>
-<#--            <a href="/university/${university.id}" class="product-link">-->
+        <#list Territories as territory>
+<#--            <a href="/territory/${territory.id}" class="product-link">-->
                 <div class="card text-white bg-dark my-3 product texture">
                     <div class="card-top">
-                        <form action="/university/delete/${university.id}" method="post">
+                        <form action="/territory/delete/${territory.id}" method="post">
                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                             <button type="submit" class="btn m-3 textureY">
                                 Удалить
@@ -49,10 +49,10 @@
                     </div>
 
                     <div class="card-body">
-                        <img src="/image_u/${university.previewImageId}"
+                        <img src="/image_u/${territory.previewImageId}"
                              class="card-img-top">
-                        <h5 class="card-title">${university.name}</h5>
-                        <p class="card-text">${university.city} </p>
+                        <h5 class="card-title">${territory.name}</h5>
+                        <p class="card-text">${territory.city} </p>
                     </div>
                 </div>
 <#--            </a>-->
